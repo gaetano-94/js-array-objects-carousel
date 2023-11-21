@@ -1,5 +1,18 @@
 'use strict';
 
+//funzioni
+function nextSlide() {
+  domItems[currentItem].classList.remove('active');
+
+  if (currentItem === domItems.length - 1) {
+    currentItem = 0;
+  } else {
+    currentItem++;
+  }
+
+  domItems[currentItem].classList.add('active');
+}
+
 //variabili per gli elementi nel DOM
 const images = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 const items = document.querySelector('.items');
@@ -27,18 +40,6 @@ for (let i = 0; i < images.length; i++) {
 }
 
 const domItems = document.querySelectorAll('.item');
-//immagini in automatico
-// setInterval(autplay, 3_000);
-
-// function autplay() {
-//   if (currentItem < domItems.length - 1) {
-//     domItems[currentItem].classList.remove('active');
-
-//     currentItem++;
-
-//     domItems[currentItem].classList.add('active');
-//   }
-// }
 
 //frecciette di top e bottom
 prev.addEventListener('click', function () {
@@ -53,14 +54,7 @@ prev.addEventListener('click', function () {
   domItems[currentItem].classList.add('active');
 });
 
-next.addEventListener('click', function () {
-  domItems[currentItem].classList.remove('active');
+next.addEventListener('click', nextSlide);
 
-  if (currentItem === domItems.length - 1) {
-    currentItem = 0;
-  } else {
-    currentItem++;
-  }
-
-  domItems[currentItem].classList.add('active');
-});
+//autoplay
+setInterval(nextSlide, 3_000);
