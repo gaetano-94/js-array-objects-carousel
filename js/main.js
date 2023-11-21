@@ -58,3 +58,35 @@ next.addEventListener('click', nextSlide);
 
 //autoplay
 setInterval(nextSlide, 3_000);
+
+/*Milestone 0:
+Creare un array di oggetti composto da Url, titolo, descrizione (potete inventare titolo e descrizione).
+*/
+const carouselImages = [
+  {
+    url: '01.jpg',
+    titolo: 'Uomo al lago',
+    descrizione: 'Perditi nella tranquillita e il silenzio di un lago',
+  },
+  {
+    url: '02.jpg',
+    titolo: 'Paesaggio Fiabbesco',
+    descrizione: 'Ecco uno dei posti piu belli e caratteriali al mondo',
+  },
+  {
+    url: '03.jpg',
+    titolo: 'Londra',
+    descrizione: 'Una delle citta piu belle e sviluppate al mondo',
+  },
+  {
+    url: '04.jpg',
+    titolo: 'Citta luminosa',
+    descrizione: 'Perditi nelle luci scintillanti',
+  },
+  {
+    url: '05.jpg',
+    titolo: 'Aria di mare',
+    descrizione:
+      'Fatti coccolare con il sole e la brezza di questa bellissima spiaggio tropicale',
+  },
+];
